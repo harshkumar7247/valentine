@@ -198,6 +198,3 @@ function yesClicked() {
 
 </body>
 </html>
-
-</body>
-</html>
