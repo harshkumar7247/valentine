@@ -23,6 +23,7 @@ body {
   color: white;
 }
 
+/* Soft romantic glow */
 body::after {
   content: "";
   position: absolute;
@@ -31,16 +32,16 @@ body::after {
   z-index: 0;
 }
 
-/* Royal card */
+/* Center card */
 .card {
   position: relative;
   z-index: 5;
   background: linear-gradient(135deg, rgba(255,255,255,0.35), rgba(255,255,255,0.08));
   backdrop-filter: blur(20px);
   padding: 70px 50px;
-  border-radius: 38px;
+  border-radius: 40px;
   text-align: center;
-  max-width: 540px;
+  max-width: 560px;
   width: 90%;
   box-shadow: 0 45px 110px rgba(0,0,0,0.8);
   border: 2px solid rgba(255,215,200,0.9);
@@ -49,23 +50,23 @@ body::after {
 /* Name */
 .name {
   font-family: 'Great Vibes', cursive;
-  font-size: 4rem;
+  font-size: 4.2rem;
   color: gold;
-  margin-bottom: 10px;
-  text-shadow: 0 0 25px rgba(255,215,0,1);
+  margin-bottom: 5px;
+  text-shadow: 0 0 30px rgba(255,215,0,1);
 }
 
 /* Question */
 h1 {
   font-size: 2.6rem;
-  margin: 20px 0 25px;
+  margin: 20px 0;
   color: #fff0f8;
-  text-shadow: 0 0 22px rgba(255,182,193,1);
+  text-shadow: 0 0 25px rgba(255,182,193,1);
 }
 
 /* Text */
 p {
-  font-size: 1.35rem;
+  font-size: 1.4rem;
   line-height: 1.7;
   margin-bottom: 25px;
   color: #fff3fa;
@@ -73,10 +74,10 @@ p {
 
 /* Countdown */
 #countdown {
-  font-size: 1.25rem;
+  font-size: 1.3rem;
   margin-bottom: 35px;
   color: #ffd6e8;
-  text-shadow: 0 0 12px rgba(255,182,193,1);
+  text-shadow: 0 0 14px rgba(255,182,193,1);
 }
 
 /* Buttons */
@@ -87,9 +88,9 @@ p {
 }
 
 button {
-  padding: 18px 50px;
-  font-size: 1.25rem;
-  border-radius: 50px;
+  padding: 18px 55px;
+  font-size: 1.3rem;
+  border-radius: 60px;
   border: none;
   cursor: pointer;
   font-family: 'Playfair Display', serif;
@@ -99,7 +100,7 @@ button {
 .yes {
   background: linear-gradient(45deg, #ff7ab6, #ff2f7a);
   color: white;
-  box-shadow: 0 0 30px rgba(255,105,180,1);
+  box-shadow: 0 0 35px rgba(255,105,180,1);
 }
 
 .no {
@@ -114,33 +115,63 @@ button {
 
 @keyframes beat {
   0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.15); }
+  50% { transform: scale(1.18); }
 }
 
 /* Final message */
 .message {
   display: none;
-  font-size: 1.9rem;
+  font-size: 2rem;
   line-height: 1.7;
   color: #fff3fa;
-  text-shadow: 0 0 22px rgba(255,182,193,1);
+  text-shadow: 0 0 25px rgba(255,182,193,1);
 }
 
-/* Petals */
-.petal {
+/* Floating hearts with A */
+.heart {
   position: absolute;
-  top: -10%;
-  width: 40px;
-  height: 40px;
-  background-image: url("https://pngimg.com/uploads/petals/petals_PNG12.png");
-  background-size: cover;
-  opacity: 0.85;
-  animation: fall linear infinite;
-  z-index: 1;
+  width: 26px;
+  height: 26px;
+  background: rgba(255,105,180,0.7);
+  transform: rotate(45deg);
+  animation: floatUp linear infinite;
+  z-index: 2;
 }
 
-@keyframes fall {
-  to { transform: translateY(120vh) rotate(360deg); }
+.heart::before,
+.heart::after {
+  content: "";
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  background: rgba(255,105,180,0.7);
+  border-radius: 50%;
+}
+
+.heart::before {
+  top: -13px;
+  left: 0;
+}
+
+.heart::after {
+  left: -13px;
+  top: 0;
+}
+
+.heart span {
+  position: absolute;
+  top: 3px;
+  left: 7px;
+  transform: rotate(-45deg);
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
+  font-family: 'Playfair Display', serif;
+}
+
+@keyframes floatUp {
+  from { transform: translateY(100vh) rotate(45deg); opacity: 0; }
+  to { transform: translateY(-10vh) rotate(45deg); opacity: 1; }
 }
 </style>
 </head>
@@ -148,13 +179,15 @@ button {
 <body>
 
 <script>
-/* Petals */
-for (let i = 0; i < 28; i++) {
-  let p = document.createElement("div");
-  p.className = "petal";
-  p.style.left = Math.random() * 100 + "vw";
-  p.style.animationDuration = 6 + Math.random() * 6 + "s";
-  document.body.appendChild(p);
+/* Floating A hearts */
+for (let i = 0; i < 25; i++) {
+  let heart = document.createElement("div");
+  heart.className = "heart";
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.animationDuration = 8 + Math.random() * 6 + "s";
+  heart.style.opacity = Math.random();
+  heart.innerHTML = "<span>A</span>";
+  document.body.appendChild(heart);
 }
 
 /* Countdown */
@@ -178,8 +211,8 @@ setInterval(() => {
   <h1 id="question">Will you be my Valentine? ❤️</h1>
 
   <p id="text">
-    You make ordinary moments feel special,<br>
-    and my heart feels at home with you.
+    You make my world softer, brighter,<br>
+    and my heart feels safest with you.
   </p>
 
   <div id="countdown">Counting the moments… 💕</div>
