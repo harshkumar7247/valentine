@@ -1,12 +1,11 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>For Avantika 💖</title>
+<title>For Avantika ❤️</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Great+Vibes&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@500;700&display=swap');
 
 body {
   margin: 0;
@@ -14,7 +13,7 @@ body {
   overflow: hidden;
   font-family: 'Playfair Display', serif;
   background:
-    radial-gradient(circle at top, rgba(255,182,193,0.5), rgba(0,0,0,0.75)),
+    radial-gradient(circle at top, rgba(255,182,193,0.55), rgba(0,0,0,0.75)),
     url("https://images.unsplash.com/photo-1509042239860-f550ce710b93");
   background-size: cover;
   background-position: center;
@@ -32,7 +31,7 @@ body::after {
   z-index: 0;
 }
 
-/* 👑 Royal Card */
+/* Royal card */
 .card {
   position: relative;
   z-index: 5;
@@ -47,16 +46,16 @@ body::after {
   border: 2px solid rgba(255,215,200,0.9);
 }
 
-/* 👑 Name */
+/* Name */
 .name {
   font-family: 'Great Vibes', cursive;
-  font-size: 3.8rem;
+  font-size: 4rem;
   color: gold;
   margin-bottom: 10px;
-  text-shadow: 0 0 20px rgba(255,215,0,0.9);
+  text-shadow: 0 0 25px rgba(255,215,0,1);
 }
 
-/* 💖 Question */
+/* Question */
 h1 {
   font-size: 2.6rem;
   margin: 20px 0 25px;
@@ -64,7 +63,7 @@ h1 {
   text-shadow: 0 0 22px rgba(255,182,193,1);
 }
 
-/* 💌 Text */
+/* Text */
 p {
   font-size: 1.35rem;
   line-height: 1.7;
@@ -72,19 +71,19 @@ p {
   color: #fff3fa;
 }
 
-/* ⏳ Countdown */
+/* Countdown */
 #countdown {
   font-size: 1.25rem;
   margin-bottom: 35px;
   color: #ffd6e8;
-  text-shadow: 0 0 12px rgba(255,182,193,0.9);
+  text-shadow: 0 0 12px rgba(255,182,193,1);
 }
 
-/* 💕 Buttons */
+/* Buttons */
 .buttons {
   display: flex;
   justify-content: center;
-  gap: 38px;
+  gap: 40px;
 }
 
 button {
@@ -100,7 +99,7 @@ button {
 .yes {
   background: linear-gradient(45deg, #ff7ab6, #ff2f7a);
   color: white;
-  box-shadow: 0 0 25px rgba(255,105,180,1);
+  box-shadow: 0 0 30px rgba(255,105,180,1);
 }
 
 .no {
@@ -108,7 +107,7 @@ button {
   color: #444;
 }
 
-/* 💓 Heartbeat */
+/* Heartbeat */
 .heartbeat {
   animation: beat 1s infinite;
 }
@@ -118,7 +117,7 @@ button {
   50% { transform: scale(1.15); }
 }
 
-/* 💌 Final Message */
+/* Final message */
 .message {
   display: none;
   font-size: 1.9rem;
@@ -127,7 +126,7 @@ button {
   text-shadow: 0 0 22px rgba(255,182,193,1);
 }
 
-/* 🌸 Petals */
+/* Petals */
 .petal {
   position: absolute;
   top: -10%;
@@ -143,23 +142,6 @@ button {
 @keyframes fall {
   to { transform: translateY(120vh) rotate(360deg); }
 }
-
-/* ✨ Sparkles */
-.sparkle {
-  position: absolute;
-  width: 6px;
-  height: 6px;
-  background: radial-gradient(circle, #ffd700, transparent);
-  border-radius: 50%;
-  animation: sparkle 3s infinite;
-  z-index: 2;
-}
-
-@keyframes sparkle {
-  0% { opacity: 0; transform: scale(0); }
-  50% { opacity: 1; transform: scale(1.6); }
-  100% { opacity: 0; transform: scale(0); }
-}
 </style>
 </head>
 
@@ -167,22 +149,12 @@ button {
 
 <script>
 /* Petals */
-for (let i = 0; i < 30; i++) {
-  let petal = document.createElement("div");
-  petal.className = "petal";
-  petal.style.left = Math.random() * 100 + "vw";
-  petal.style.animationDuration = 6 + Math.random() * 6 + "s";
-  document.body.appendChild(petal);
-}
-
-/* Sparkles */
-for (let i = 0; i < 45; i++) {
-  let sparkle = document.createElement("div");
-  sparkle.className = "sparkle";
-  sparkle.style.left = Math.random() * 100 + "vw";
-  sparkle.style.top = Math.random() * 100 + "vh";
-  sparkle.style.animationDelay = Math.random() * 3 + "s";
-  document.body.appendChild(sparkle);
+for (let i = 0; i < 28; i++) {
+  let p = document.createElement("div");
+  p.className = "petal";
+  p.style.left = Math.random() * 100 + "vw";
+  p.style.animationDuration = 6 + Math.random() * 6 + "s";
+  document.body.appendChild(p);
 }
 
 /* Countdown */
@@ -203,17 +175,17 @@ setInterval(() => {
 <div class="card">
   <div class="name">Avantika</div>
 
-  <h1 id="question">Will you be my Valentine? 💖</h1>
+  <h1 id="question">Will you be my Valentine? ❤️</h1>
 
   <p id="text">
-    Every smile of yours feels like magic,<br>
-    every moment with you feels like home.
+    You make ordinary moments feel special,<br>
+    and my heart feels at home with you.
   </p>
 
   <div id="countdown">Counting the moments… 💕</div>
 
   <div class="buttons" id="buttons">
-    <button class="yes" id="yesBtn" onclick="yesClicked()">Yes 🌸</button>
+    <button class="yes" id="yesBtn" onclick="yesClicked()">Yes 💖</button>
     <button class="no">No</button>
   </div>
 
