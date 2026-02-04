@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<Avantika>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
